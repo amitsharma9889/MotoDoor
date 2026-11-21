@@ -5,7 +5,27 @@ const connectDB = require('./config/db');
 const { categories, VISIT_CHARGE, URGENT_CHARGE } = require('./config/services');
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || 'https://client-faak268tu-amitsharma08316-5515s-projects.vercel.app/' }));
+const normalizeOrigin = (url) => url && url.replace(/\/+$/, '');
+
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'https://client-faak268tu-amitsharma08316-5515s-projects.vercel.app',
+  'http://localhost:5173',
+]
+  .map(normalizeOrigin)
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(normalizeOrigin(origin))) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
