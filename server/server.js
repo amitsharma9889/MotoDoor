@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const { categories, VISIT_CHARGE, URGENT_CHARGE } = require('./config/services');
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(cors({ origin: process.env.CLIENT_URL || 'https://client-faak268tu-amitsharma08316-5515s-projects.vercel.app/' }));
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
