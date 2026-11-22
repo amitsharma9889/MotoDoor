@@ -248,11 +248,3 @@ Current limitations and planned improvements:
 - [ ] SMS or email notifications for booking updates
 - [ ] Monthly and annual maintenance packages, memberships and fleet accounts
 
-## Team
-
-Built by students of **S R Institute of Management and Technology, Lucknow** (Electrical and Electronics Engineering, 2026–27):
-
-- Akash Verma
-- Harsh Shukla
-- Mohit Kumar
-- Kuldeep Kumar
