@@ -9,7 +9,7 @@ const normalizeOrigin = (url) => url && url.replace(/\/+$/, '');
 
 const allowedOrigins = [
   process.env.CLIENT_URL,
-  'https://client-faak268tu-amitsharma08316-5515s-projects.vercel.app',
+  'https://client-xi-six-37.vercel.app',
   'http://localhost:5173',
 ]
   .map(normalizeOrigin)
